@@ -294,13 +294,14 @@ body.menu-expanded button path {
 /* ========  #HOME =======================  */
 
 #home {
+  padding-block: 0;
   padding-top: calc(4.1rem + var(--nav-height));
 }
 
 #home::before {
   content: '';
   width: 100%;
-  height: calc(108rem + var(--nav-height));
+  height: calc(76% + var(--nav-height));
   background-color: var(--brand-light);
   display: block;
 
@@ -483,8 +484,17 @@ footer .social-links {
 
 @media (min-width: 1024px) {
   /* ====== GERAL ========*/
+  body {
+    overflow: auto;
+  }
+
   .wrapper {
     width: min(112rem, 100%);
+    display: grid;
+  }
+
+  section {
+    padding-block: ;
   }
 
   /* ====== NAVEGATION ========*/
@@ -504,6 +514,7 @@ footer .social-links {
     transform: initial;
     color: initial;
     background-color: initial;
+    filter: initial;
   }
 
   nav#navegation .close-menu,
@@ -551,6 +562,12 @@ footer .social-links {
     opacity: 0.6;
   }
 
+  nav#navegation .menu a.button:hover {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+  }
+
   nav#navegation.scroll .menu a.button {
     border-color: white;
     color: white;
@@ -560,6 +577,7 @@ footer .social-links {
     transition: opacity 0.2s;
   }
 
+  /* nav#navegation .menu li a.active, */
   nav#navegation .menu li a:hover {
     opacity: 1;
     font-weight: 700;
@@ -584,6 +602,7 @@ footer .social-links {
     background-color: white;
   }
 
+  /* nav#navegation .menu li a.active::after */
   nav#navegation .menu li a:hover::after {
     padding-inline: 0.8rem;
     width: 100%;
@@ -593,9 +612,65 @@ footer .social-links {
     opacity: 1;
   }
 
+  /* nav#navegation.scroll .menu a.button.active */
   nav#navegation.scroll .menu a.button:hover {
     background-color: var(--primary-color);
     filter: brightness(1.3);
     border: none;
+  }
+
+  /* ====== home ========*/
+
+  #home::before {
+    height: calc(96% - var(--nav-height));
+  }
+
+  #home {
+    padding-top: var(--nav-height);
+  }
+
+  #home .wrapper {
+    grid-template-columns: 60.5rem 1fr;
+    grid-template-areas:
+      'A B'
+      'C C';
+  }
+
+  #home .col-a {
+    grid-area: A;
+    text-align: left;
+    align-self: center;
+  }
+
+  #home .col-b {
+    grid-area: B;
+  }
+
+  #home h1 {
+    font-size: 5.2rem;
+  }
+
+  #home .content p {
+    font-size: 1.8rem;
+  }
+
+  #home .stats .stat + .stat {
+    border-left: 1px solid var(--primary-color);
+  }
+
+  #home .stats .stat {
+    flex: 1;
+  }
+
+  #home .stats {
+    grid-area: C;
+
+    flex-direction: row;
+    padding: 6rem;
+    gap: 0;
+  }
+
+  #home .img {
+    width: 42rem;
   }
 }
