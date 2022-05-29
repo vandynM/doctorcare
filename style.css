@@ -493,8 +493,21 @@ footer .social-links {
     display: grid;
   }
 
+  .col-a {
+    grid-area: A;
+  }
+
+  .col-b {
+    grid-area: B;
+  }
+
   section {
     padding-block: ;
+  }
+
+  section header h2 {
+    font-size: 4rem;
+    line-height: 5.2rem;
   }
 
   /* ====== NAVEGATION ========*/
@@ -574,10 +587,10 @@ footer .social-links {
   }
 
   nav#navegation .menu li a {
-    transition: opacity 0.2s;
+    transition: opacity 0.4s;
   }
 
-  /* nav#navegation .menu li a.active, */
+  nav#navegation .menu li a.active,
   nav#navegation .menu li a:hover {
     opacity: 1;
     font-weight: 700;
@@ -602,7 +615,7 @@ footer .social-links {
     background-color: white;
   }
 
-  /* nav#navegation .menu li a.active::after */
+  nav#navegation .menu li a.active::after,
   nav#navegation .menu li a:hover::after {
     padding-inline: 0.8rem;
     width: 100%;
@@ -612,7 +625,7 @@ footer .social-links {
     opacity: 1;
   }
 
-  /* nav#navegation.scroll .menu a.button.active */
+  nav#navegation.scroll .menu a.button.active,
   nav#navegation.scroll .menu a.button:hover {
     background-color: var(--primary-color);
     filter: brightness(1.3);
@@ -637,13 +650,8 @@ footer .social-links {
   }
 
   #home .col-a {
-    grid-area: A;
     text-align: left;
     align-self: center;
-  }
-
-  #home .col-b {
-    grid-area: B;
   }
 
   #home h1 {
@@ -672,5 +680,74 @@ footer .social-links {
 
   #home .img {
     width: 42rem;
+  }
+
+  /* ====== SERVICES ========*/
+
+  #services h2 {
+    width: 47rem;
+    margin-inline: auto;
+  }
+
+  #services .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  #services .card {
+    width: 30%;
+    flex-grow: 1;
+  }
+
+  /* ====== ABOUT========*/
+
+  #about .wrapper {
+    grid-template-columns: 48rem 1fr;
+    grid-template-areas: 'B A';
+    gap: 6.7rem;
+  }
+
+  #about .col-a {
+    align-self: center;
+  }
+
+  #about .col-b {
+    margin-bottom: 0;
+  }
+
+  /* ====== CONTACT ========*/
+
+  #contact .wrapper {
+    grid-template-columns: 1fr 57.5rem;
+    grid-template-areas: 'A B';
+  }
+
+  #contact h2 {
+    width: 40.4rem;
+  }
+
+  /* ====== FOOOTER ========*/
+
+  footer {
+    padding-block: 8rem;
+  }
+
+  footer .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'A B';
+  }
+
+  footer .col-a {
+    align-self: center;
+  }
+
+  footer .col-b {
+    align-self: center;
+    justify-self: flex-end;
+  }
+
+  footer p {
+    margin-bottom: 0;
   }
 }
